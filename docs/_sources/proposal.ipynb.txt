@@ -93,7 +93,7 @@
     "tags": []
    },
    "source": [
-    "## Conventional Training Procedure\n",
+    "## Conventional training procedure\n",
     "\n",
     "* Still suffers from all of the downsides of lossy compression\n",
     "* Don't get any of the benefits of smaller representation!"
@@ -138,8 +138,7 @@
     "## Neural compression standards\n",
     "\n",
     "* Soundstream (Google, 2021) and Encodec (Meta, 2022)\n",
-    "* Fully trained models available to download and use\n",
-    "```encodec [-b TARGET_BANDWIDTH] [-f] [--hq] [--lm] INPUT_FILE [OUTPUT_FILE]```"
+    "* Fully trained models available to download and use"
    ]
   },
   {
@@ -170,116 +169,20 @@
   },
   {
    "cell_type": "markdown",
-   "id": "856118da-3465-40a3-88b7-625fd50168cc",
-   "metadata": {
-    "slideshow": {
-     "slide_type": "slide"
-    },
-    "tags": []
-   },
-   "source": [
-    "## Training on transformed data\n",
-    "\n",
-    "* Reduce size and number of initial convolutional layers by training on subband coefficients\n",
-    "* Input size remains the same (Quantization of transform coefficients ignored)"
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "id": "10cbc5e8-f1c6-4734-8b1d-9452529dde11",
-   "metadata": {
-    "tags": [
-     "remove-cell"
-    ]
-   },
-   "source": [
-    "<p style=\"text-align:center;\">\n",
-    "<img src=\"_images/dct_vs_resnet.png\" width=800 height=800 class=\"center\">\n",
-    "</p>"
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "id": "b643df2f-1b30-4caa-b2a5-ded49d17641f",
-   "metadata": {
-    "tags": [
-     "remove-nb-cell"
-    ]
-   },
-   "source": [
-    "![](img/dct_vs_resnet.png)"
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "id": "9cd84e14-d5d3-44f8-82ca-ddadbcc77fef",
-   "metadata": {
-    "slideshow": {
-     "slide_type": "slide"
-    },
-    "tags": []
-   },
-   "source": [
-    "## Training on transformed data"
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "id": "ad962697-19d5-4367-9747-9fadd9b810b0",
-   "metadata": {
-    "tags": [
-     "remove-cell"
-    ]
-   },
-   "source": [
-    "<p style=\"text-align:center;\">\n",
-    "<img src=\"_images/FNNSFJ.png\" width=700 height=700 class=\"center\">\n",
-    "</p>"
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "id": "fb969d9e-28df-462e-b7f5-3557a6d0d601",
-   "metadata": {
-    "tags": [
-     "remove-nb-cell"
-    ]
-   },
-   "source": [
-    "![](img/FNNSFJ.png)"
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "id": "9822c15b-341f-4688-8845-59bcdc392842",
-   "metadata": {
-    "slideshow": {
-     "slide_type": "slide"
-    },
-    "tags": []
-   },
-   "source": [
-    "## Training on quantized data\n",
-    "\n",
-    "* Each transform coefficient only contains about 2 bits instead of 8\n",
-    "* \"Replace\" each 2x2 block of 2-bit transform coefficients with a single high precision input\n",
-    "  * Size of input layer: $112 \\times 112 \\times 3 \\times 32$ bits per image\n",
-    "  * 3 GB Feature memory (down from 13)\n",
-    "  * 131 GFLOPs per pass (down from 497)\n",
-    "* How do we \"replace\" several low-precision inputs with a single high precision input?"
-   ]
-  },
-  {
-   "cell_type": "markdown",
    "id": "a0c3aadc-0cfe-48ce-8ee6-665f26945488",
-   "metadata": {},
+   "metadata": {
+    "slideshow": {
+     "slide_type": "slide"
+    },
+    "tags": []
+   },
    "source": [
-    "## Conventional approach vs Neural codec transfer learning\n",
+    "## Neural codec transfer learning\n",
     "\n",
     "* Example dataset: Speech commands\n",
     "  * Input size: $128 \\times 128$ time-frequency distribution represented at full precision\n",
     "  * Compressed size: $2 \\times 75 \\times 10$ binary codes\n",
-    "  * Size reduction of over 300 $\\times$ with very small loss in speech intelligibility\n",
+    "  * Size reduction of over $300\\times$ with very small loss in speech intelligibility\n",
     "\n",
     "| <audio controls=\"controls\"><source src=\"./_static/left01.wav\" type=\"audio/wav\"></audio>      | <audio controls=\"controls\"><source src=\"./_static/right01.wav\" type=\"audio/wav\"></audio>      | <audio controls=\"controls\"><source src=\"./_static/yes01.wav\" type=\"audio/wav\"></audio>      | <audio controls=\"controls\"><source src=\"./_static/no01.wav\" type=\"audio/wav\"></audio>      |\n",
     "|----------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------|\n",

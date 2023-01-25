@@ -58,7 +58,7 @@
 <p><img alt="" src="_images/lossy_lossless.png" /></p>
 </section>
 <section id="conventional-training-procedure">
-<h2>Conventional Training Procedure<a class="headerlink" href="#conventional-training-procedure" title="Permalink to this headline">¶</a></h2>
+<h2>Conventional training procedure<a class="headerlink" href="#conventional-training-procedure" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Still suffers from all of the downsides of lossy compression</p></li>
 <li><p>Don’t get any of the benefits of smaller representation!</p></li>
@@ -69,45 +69,18 @@
 <h2>Neural compression standards<a class="headerlink" href="#neural-compression-standards" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Soundstream (Google, 2021) and Encodec (Meta, 2022)</p></li>
-<li><p>Fully trained models available to download and use
-<code class="docutils literal notranslate"><span class="pre">encodec</span> <span class="pre">[-b</span> <span class="pre">TARGET_BANDWIDTH]</span> <span class="pre">[-f]</span> <span class="pre">[--hq]</span> <span class="pre">[--lm]</span> <span class="pre">INPUT_FILE</span> <span class="pre">[OUTPUT_FILE]</span></code></p></li>
+<li><p>Fully trained models available to download and use</p></li>
 </ul>
 <p><img alt="" src="_images/encodec_architecture.png" /></p>
 </section>
-<section id="training-on-transformed-data">
-<h2>Training on transformed data<a class="headerlink" href="#training-on-transformed-data" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><p>Reduce size and number of initial convolutional layers by training on subband coefficients</p></li>
-<li><p>Input size remains the same (Quantization of transform coefficients ignored)</p></li>
-</ul>
-<p><img alt="" src="_images/dct_vs_resnet.png" /></p>
-</section>
-<section id="id1">
-<h2>Training on transformed data<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
-<p><img alt="" src="_images/FNNSFJ.png" /></p>
-</section>
-<section id="training-on-quantized-data">
-<h2>Training on quantized data<a class="headerlink" href="#training-on-quantized-data" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><p>Each transform coefficient only contains about 2 bits instead of 8</p></li>
-<li><p>“Replace” each 2x2 block of 2-bit transform coefficients with a single high precision input</p>
-<ul>
-<li><p>Size of input layer: <span class="math notranslate nohighlight">\(112 \times 112 \times 3 \times 32\)</span> bits per image</p></li>
-<li><p>3 GB Feature memory (down from 13)</p></li>
-<li><p>131 GFLOPs per pass (down from 497)</p></li>
-</ul>
-</li>
-<li><p>How do we “replace” several low-precision inputs with a single high precision input?</p></li>
-</ul>
-</section>
-<section id="conventional-approach-vs-neural-codec-transfer-learning">
-<h2>Conventional approach vs Neural codec transfer learning<a class="headerlink" href="#conventional-approach-vs-neural-codec-transfer-learning" title="Permalink to this headline">¶</a></h2>
+<section id="neural-codec-transfer-learning">
+<h2>Neural codec transfer learning<a class="headerlink" href="#neural-codec-transfer-learning" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Example dataset: Speech commands</p>
 <ul>
 <li><p>Input size: <span class="math notranslate nohighlight">\(128 \times 128\)</span> time-frequency distribution represented at full precision</p></li>
 <li><p>Compressed size: <span class="math notranslate nohighlight">\(2 \times 75 \times 10\)</span> binary codes</p></li>
-<li><p>Size reduction of over 300 <span class="math notranslate nohighlight">\(\times\)</span> with very small loss in speech intelligibility</p></li>
+<li><p>Size reduction of over <span class="math notranslate nohighlight">\(300\times\)</span> with very small loss in speech intelligibility</p></li>
 </ul>
 </li>
 </ul>
@@ -185,12 +158,9 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Transfer Learning from Lossy Codecs</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#lossy-compression">Lossy compression</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#conventional-training-procedure">Conventional Training Procedure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#conventional-training-procedure">Conventional training procedure</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#neural-compression-standards">Neural compression standards</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#training-on-transformed-data">Training on transformed data</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id1">Training on transformed data</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#training-on-quantized-data">Training on quantized data</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#conventional-approach-vs-neural-codec-transfer-learning">Conventional approach vs Neural codec transfer learning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#neural-codec-transfer-learning">Neural codec transfer learning</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#training-on-quantized-data-or-discrete-codes">Training on quantized data or discrete codes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#open-questions-and-project-goals">Open questions and project goals</a></li>
 </ul>
