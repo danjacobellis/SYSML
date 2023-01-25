@@ -1,0 +1,345 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "id": "267e4f8c-85dd-4f36-9ee4-0462952afe5d",
+   "metadata": {
+    "tags": [
+     "remove-nb-cell"
+    ]
+   },
+   "source": [
+    "# Transfer Learning from Lossy Codecs\n",
+    "[Slides](https://danjacobellis.github.io/ITML/proposal.slides.html)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "c0e072a5-d669-4465-9a53-03cf7f807acd",
+   "metadata": {
+    "slideshow": {
+     "slide_type": "slide"
+    },
+    "tags": [
+     "remove-cell"
+    ]
+   },
+   "source": [
+    "<script>\n",
+    "    document.querySelector('head').innerHTML += '<style>.slides { zoom: 1.75 !important; }</style>';\n",
+    "</script>\n",
+    "\n",
+    "<center> <h1>\n",
+    "Transfer Learning from Lossy Codecs\n",
+    "</h1> </center>\n",
+    "\n",
+    "&nbsp;\n",
+    "\n",
+    "<center> <h2>\n",
+    "Dan Jacobellis\n",
+    "</h2> </center>"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "30aa1078-7e0d-44c5-8f0d-99f43c450981",
+   "metadata": {
+    "slideshow": {
+     "slide_type": "slide"
+    },
+    "tags": []
+   },
+   "source": [
+    "## Lossy compression\n",
+    "\n",
+    "* Most data are stored using lossy formats (MP3, JPEG)\n",
+    "* 1-4 bit subband quantization is typical\n",
+    "* ~1.5 bits per sample/pixel after entropy coding"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "1a3b6296-15c4-49c9-a70b-01362df4bdfd",
+   "metadata": {
+    "tags": [
+     "remove-cell"
+    ]
+   },
+   "source": [
+    "<p style=\"text-align:center;\">\n",
+    "<img src=\"_images/lossy_lossless.png\" width=700 height=700 class=\"center\">\n",
+    "</p>"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "5415e03e-48e4-41da-b49d-89bc78f7f7f6",
+   "metadata": {
+    "tags": [
+     "remove-nb-cell"
+    ]
+   },
+   "source": [
+    "![](img/lossy_lossless.png)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "a012104d-ab48-462e-a8ca-2bc3788cc92a",
+   "metadata": {
+    "slideshow": {
+     "slide_type": "slide"
+    },
+    "tags": []
+   },
+   "source": [
+    "## Conventional Training Procedure\n",
+    "\n",
+    "* Still suffers from all of the downsides of lossy compression\n",
+    "* Don't get any of the benefits of smaller representation!"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "42577d58-eb38-4c27-9c6c-61568a1ad349",
+   "metadata": {
+    "tags": [
+     "remove-cell"
+    ]
+   },
+   "source": [
+    "<p style=\"text-align:center;\">\n",
+    "<img src=\"_images/conventional.png\" width=700 height=700 class=\"center\">\n",
+    "</p>"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "1f030fd9-c281-48e6-96ef-61cce8442f94",
+   "metadata": {
+    "tags": [
+     "remove-nb-cell"
+    ]
+   },
+   "source": [
+    "![](img/conventional.png)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "6907b2a7-49d9-4ec7-9f15-31a059ca1259",
+   "metadata": {
+    "slideshow": {
+     "slide_type": "slide"
+    },
+    "tags": []
+   },
+   "source": [
+    "## Neural compression standards\n",
+    "\n",
+    "* Soundstream (Google, 2021) and Encodec (Meta, 2022)\n",
+    "* Fully trained models available to download and use\n",
+    "```encodec [-b TARGET_BANDWIDTH] [-f] [--hq] [--lm] INPUT_FILE [OUTPUT_FILE]```"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "72c6e009-0556-40ab-b0e7-10935824d179",
+   "metadata": {
+    "tags": [
+     "remove-cell"
+    ]
+   },
+   "source": [
+    "<p style=\"text-align:center;\">\n",
+    "<img src=\"_images/encodec_architecture.png\" width=700 height=700 class=\"center\">\n",
+    "</p>"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "aa1f7b0a-0d2d-4d28-9c2f-e27a73ee1c54",
+   "metadata": {
+    "tags": [
+     "remove-nb-cell"
+    ]
+   },
+   "source": [
+    "![](img/encodec_architecture.png)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "856118da-3465-40a3-88b7-625fd50168cc",
+   "metadata": {
+    "slideshow": {
+     "slide_type": "slide"
+    },
+    "tags": []
+   },
+   "source": [
+    "## Training on transformed data\n",
+    "\n",
+    "* Reduce size and number of initial convolutional layers by training on subband coefficients\n",
+    "* Input size remains the same (Quantization of transform coefficients ignored)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "10cbc5e8-f1c6-4734-8b1d-9452529dde11",
+   "metadata": {
+    "tags": [
+     "remove-cell"
+    ]
+   },
+   "source": [
+    "<p style=\"text-align:center;\">\n",
+    "<img src=\"_images/dct_vs_resnet.png\" width=800 height=800 class=\"center\">\n",
+    "</p>"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "b643df2f-1b30-4caa-b2a5-ded49d17641f",
+   "metadata": {
+    "tags": [
+     "remove-nb-cell"
+    ]
+   },
+   "source": [
+    "![](img/dct_vs_resnet.png)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "9cd84e14-d5d3-44f8-82ca-ddadbcc77fef",
+   "metadata": {
+    "slideshow": {
+     "slide_type": "slide"
+    },
+    "tags": []
+   },
+   "source": [
+    "## Training on transformed data"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "ad962697-19d5-4367-9747-9fadd9b810b0",
+   "metadata": {
+    "tags": [
+     "remove-cell"
+    ]
+   },
+   "source": [
+    "<p style=\"text-align:center;\">\n",
+    "<img src=\"_images/FNNSFJ.png\" width=700 height=700 class=\"center\">\n",
+    "</p>"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "fb969d9e-28df-462e-b7f5-3557a6d0d601",
+   "metadata": {
+    "tags": [
+     "remove-nb-cell"
+    ]
+   },
+   "source": [
+    "![](img/FNNSFJ.png)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "9822c15b-341f-4688-8845-59bcdc392842",
+   "metadata": {
+    "slideshow": {
+     "slide_type": "slide"
+    },
+    "tags": []
+   },
+   "source": [
+    "## Training on quantized data\n",
+    "\n",
+    "* Each transform coefficient only contains about 2 bits instead of 8\n",
+    "* \"Replace\" each 2x2 block of 2-bit transform coefficients with a single high precision input\n",
+    "  * Size of input layer: $112 \\times 112 \\times 3 \\times 32$ bits per image\n",
+    "  * 3 GB Feature memory (down from 13)\n",
+    "  * 131 GFLOPs per pass (down from 497)\n",
+    "* How do we \"replace\" several low-precision inputs with a single high precision input?"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "a0c3aadc-0cfe-48ce-8ee6-665f26945488",
+   "metadata": {},
+   "source": [
+    "## Conventional approach vs Neural codec transfer learning\n",
+    "\n",
+    "* Example dataset: Speech commands\n",
+    "  * Input size: $128 \\times 128$ time-frequency distribution represented at full precision\n",
+    "  * Compressed size: $2 \\times 75 \\times 10$ binary codes\n",
+    "  * Size reduction of over 300 $\\times$ with very small loss in speech intelligibility\n",
+    "\n",
+    "| <audio controls=\"controls\"><source src=\"./_static/left01.wav\" type=\"audio/wav\"></audio>      | <audio controls=\"controls\"><source src=\"./_static/right01.wav\" type=\"audio/wav\"></audio>      | <audio controls=\"controls\"><source src=\"./_static/yes01.wav\" type=\"audio/wav\"></audio>      | <audio controls=\"controls\"><source src=\"./_static/no01.wav\" type=\"audio/wav\"></audio>      |\n",
+    "|----------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------|\n",
+    "| <audio controls=\"controls\"><source src=\"./_static/left01_ecdc.wav\" type=\"audio/wav\"></audio> | <audio controls=\"controls\"><source src=\"./_static/right01_ecdc.wav\" type=\"audio/wav\"></audio> | <audio controls=\"controls\"><source src=\"./_static/yes01_ecdc.wav\" type=\"audio/wav\"></audio> | <audio controls=\"controls\"><source src=\"./_static/no01_ecdc.wav\" type=\"audio/wav\"></audio> |"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "2714f546-841a-428a-ba39-386ec37ae9dd",
+   "metadata": {
+    "slideshow": {
+     "slide_type": "slide"
+    },
+    "tags": []
+   },
+   "source": [
+    "## Training on quantized data or discrete codes\n",
+    "* Ideally, we could just \"replace\" several low-precision inputs with a single high precision input\n",
+    "* Naive approach: $y = (x_1) + (x_2 << 2) + (x_3 << 4) + (x_4 << 6)$\n",
+    "  * Amounts to creating a categorical variable\n",
+    "  * Standard approach to training on categorical variable is to one-hot encode"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "3abbfdf1-b026-4a46-aa11-ffc0dce86042",
+   "metadata": {
+    "slideshow": {
+     "slide_type": "slide"
+    },
+    "tags": []
+   },
+   "source": [
+    "## Open questions and project goals\n",
+    "\n",
+    "* What is the best way to train on quantized data?\n",
+    "  * Binary neural networks\n",
+    "  * Exploit sparsity (feature hashing)\n",
+    "  * Others?\n",
+    "* How do current neural codecs perform on out of distribution data?\n",
+    "  * Test performance of encodec (trained on speech and music) on other types of audio signals\n",
+    "* How effective is this type of transfer learning\n",
+    "  * Reduction in data collection?\n",
+    "  * Reduction in computation?"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Julia 1.7.1",
+   "language": "julia",
+   "name": "julia-1.7"
+  },
+  "language_info": {
+   "file_extension": ".jl",
+   "mimetype": "application/julia",
+   "name": "julia",
+   "version": "1.7.1"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
