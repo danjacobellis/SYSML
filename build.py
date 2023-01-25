@@ -12,7 +12,7 @@ def build():
         rmtree("jupyter_execute")
     Path("docs/.nojekyll").touch()
     
-    result = run("jupyter-nbconvert --to slides lossy_learning.ipynb --output docs/lossy_learning --TagRemovePreprocessor.enabled=True --TagRemovePreprocessor.remove_cell_tags='remove-nb-cell' --TagRemovePreprocessor.remove_input_tags='remove-nb-input'",capture_output=True, shell=True)
+    result = run("jupyter-nbconvert --to slides proposal.ipynb --output docs/proposal --TagRemovePreprocessor.enabled=True --TagRemovePreprocessor.remove_cell_tags='remove-nb-cell' --TagRemovePreprocessor.remove_input_tags='remove-nb-input'",capture_output=True, shell=True)
     print(result.stdout.decode("utf-8"))
 
 if __name__ == '__main__':
