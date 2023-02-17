@@ -1,0 +1,101 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "id": "267e4f8c-85dd-4f36-9ee4-0462952afe5d",
+   "metadata": {
+    "tags": [
+     "remove-nb-cell",
+     "remove-cell"
+    ]
+   },
+   "source": [
+    "# Transfer Learning from Lossy Codecs\n",
+    "[Slides](https://danjacobellis.github.io/SYSML/progress.slides.html)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "c0e072a5-d669-4465-9a53-03cf7f807acd",
+   "metadata": {
+    "slideshow": {
+     "slide_type": "slide"
+    },
+    "tags": [
+     "remove-cell"
+    ]
+   },
+   "source": [
+    "<script>\n",
+    "    document.querySelector('head').innerHTML += '<style>.slides { zoom: 1.75 !important; }</style>';\n",
+    "</script>\n",
+    "\n",
+    "<center> <h1>\n",
+    "Transfer Learning from Lossy Codecs\n",
+    "</h1> </center>\n",
+    "\n",
+    "&nbsp;\n",
+    "\n",
+    "<center> <h2>\n",
+    "Dan Jacobellis\n",
+    "</h2> </center>"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "c4adb1d4-ea2b-486f-87e3-b4163663fdb2",
+   "metadata": {},
+   "source": [
+    "## Approaches to neural compression\n",
+    "\n",
+    "### Optimize parameters of a nonlinear transform code\n",
+    "* [Paper: End-to-end optimized image compression](http://www.cns.nyu.edu/pub/eero/balle17a-final.pdf)\n",
+    "  * [Code example (tensorflow documentation)](https://www.tensorflow.org/tutorials/generative/data_compression)\n",
+    "* [Paper: Neural Data-Dependent Transform for Learned Image Compression](https://openaccess.thecvf.com/content/CVPR2022/html/Wang_Neural_Data-Dependent_Transform_for_Learned_Image_Compression_CVPR_2022_paper.html)\n",
+    "  * [Code example with pretrained model](https://github.com/Dezhao-Wang/Neural-Syntax-Code)\n",
+    "\n",
+    "### Vector-quantized variational autoencoder\n",
+    "* [Paper: Neural Discrete Representation Learning](https://proceedings.neurips.cc/paper/2017/hash/7a98af17e63a0ac09ce2e96d03992fbc-Abstract.html)\n",
+    "  * [Code example (keras documentation)](https://keras.io/examples/generative/vq_vae/)\n",
+    "  * [Standardized codec for speech and music: \"Encodec\"](https://github.com/facebookresearch/encodec)\n",
+    "  * [Dan's slides on VQ-VAE](https://danjacobellis.net/ITML/discrete_representation_learning.html)\n",
+    "\n",
+    "### RNN-based generative model of speech\n",
+    "* [Paper: Generative speech coding with predictive variance regularization](https://ieeexplore.ieee.org/abstract/document/9415120?casa_token=dZRQjc-xqesAAAAA:UxxPxExec7YEAFOdHvM5L0fPMa3LjVNz8UJpeqoAQEwUds6j5ng5Nik5SnPcBlGsPQT2q2HG)\n",
+    "  * [Standardized codec for speech only: \"Lyra\"](https://github.com/google/lyra)\n",
+    "\n",
+    "### Conditional GAN for images\n",
+    "\n",
+    "* [Paper: High-Fidelity Generative Image Compression](https://proceedings.neurips.cc/paper/2020/hash/8a50bae297807da9e97722a0b3fd8f27-Abstract.html)\n",
+    "  * [Code example with pretrained model](https://github.com/tensorflow/compression/tree/master/models/hific)\n",
+    "\n",
+    "\n",
+    "## Neural network structures for learning from quantized data\n",
+    "\n",
+    "### Binary Neural Networks\n",
+    "\n",
+    "* [Larq: Library for implementing BNNs](https://docs.larq.dev/larq/)\n",
+    "* [Dan's slides](https://danjacobellis.net/ITML/lossy_learning.slides.html#/)\n",
+    "\n",
+    "### One-hot encode, then exploit sparsity\n",
+    "* [Paper: Learning on tree architectures outperforms a convolutional feedforward network](https://www.nature.com/articles/s41598-023-27986-6)\n",
+    "  * [Code example for CIFAR](https://github.com/yuval-meir/Tree-3)\n"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Julia 1.7.0-beta3",
+   "language": "julia",
+   "name": "julia-1.7"
+  },
+  "language_info": {
+   "file_extension": ".jl",
+   "mimetype": "application/julia",
+   "name": "julia",
+   "version": "1.7.0"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}

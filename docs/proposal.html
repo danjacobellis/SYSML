@@ -28,6 +28,7 @@
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Approaches to neural compression" href="progress.html" />
     <link rel="prev" title="Index" href="index.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
@@ -76,9 +77,9 @@
 <section id="neural-codec-transfer-learning">
 <h2>Neural codec transfer learning<a class="headerlink" href="#neural-codec-transfer-learning" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p>Example dataset: Speech commands</p>
+<li><p>Example dataset: speech commands</p>
 <ul>
-<li><p>Input size: <span class="math notranslate nohighlight">\(128 \times 128\)</span> time-frequency distribution represented at full precision</p></li>
+<li><p>Input <span class="math notranslate nohighlight">\(128 \times 128\)</span> time-frequency distribution represented at full precision</p></li>
 <li><p>Compressed size: <span class="math notranslate nohighlight">\(2 \times 75 \times 10\)</span> binary codes</p></li>
 <li><p>Size reduction of over <span class="math notranslate nohighlight">\(300\times\)</span> with very small loss in speech intelligibility</p></li>
 </ul>
@@ -105,7 +106,7 @@
 <h2>Training on quantized data or discrete codes<a class="headerlink" href="#training-on-quantized-data-or-discrete-codes" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Ideally, we could just “replace” several low-precision inputs with a single high precision input</p></li>
-<li><p>Naive approach: <span class="math notranslate nohighlight">\(y = (x_1) + (x_2 &lt;&lt; 2) + (x_3 &lt;&lt; 4) + (x_4 &lt;&lt; 6)\)</span></p>
+<li><p>Naive approach: <span class="math notranslate nohighlight">\(y = (x_1) + (x_2 &lt;&lt; 1) + (x_3 &lt;&lt; 2) + (x_4 &lt;&lt; 3) \cdots\)</span></p>
 <ul>
 <li><p>Amounts to creating a categorical variable</p></li>
 <li><p>Standard approach to training on categorical variable is to one-hot encode</p></li>
@@ -128,7 +129,7 @@
 <li><p>Test performance of encodec (trained on speech and music) on other types of audio signals</p></li>
 </ul>
 </li>
-<li><p>How effective is this type of transfer learning</p>
+<li><p>How effective is this type of transfer learning?</p>
 <ul>
 <li><p>Reduction in data collection?</p></li>
 <li><p>Reduction in computation?</p></li>
@@ -165,6 +166,8 @@
 <li class="toctree-l2"><a class="reference internal" href="#open-questions-and-project-goals">Open questions and project goals</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="progress.html">Approaches to neural compression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="progress.html#neural-network-structures-for-learning-from-quantized-data">Neural network structures for learning from quantized data</a></li>
 </ul>
 
 <div class="relations">
@@ -172,6 +175,7 @@
 <ul>
   <li><a href="index.html">Documentation overview</a><ul>
       <li>Previous: <a href="index.html" title="previous chapter">Index</a></li>
+      <li>Next: <a href="progress.html" title="next chapter">Approaches to neural compression</a></li>
   </ul></li>
 </ul>
 </div>

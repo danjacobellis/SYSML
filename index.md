@@ -2,5 +2,6 @@
 
 ```{toctree}
 :maxdepth: 2
-proposal.md
+proposal
+progress
 ```
