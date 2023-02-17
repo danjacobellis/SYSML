@@ -1,4 +1,4 @@
-project = 'Computer Systems and Machine Learning'
+project = 'SysML'
 
 extensions = [
     "myst_nb",
