@@ -67,9 +67,14 @@
     "### Conditional GAN for images\n",
     "\n",
     "* [Paper: High-Fidelity Generative Image Compression](https://proceedings.neurips.cc/paper/2020/hash/8a50bae297807da9e97722a0b3fd8f27-Abstract.html)\n",
-    "  * [Code example with pretrained model](https://github.com/tensorflow/compression/tree/master/models/hific)\n",
-    "\n",
-    "\n",
+    "  * [Code example with pretrained model](https://github.com/tensorflow/compression/tree/master/models/hific)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "c3adb3d1-90c8-410f-b294-fd6a3444bcc7",
+   "metadata": {},
+   "source": [
     "## Neural network structures for learning from quantized data\n",
     "\n",
     "### Binary Neural Networks\n",
@@ -79,7 +84,7 @@
     "\n",
     "### One-hot encode, then exploit sparsity\n",
     "* [Paper: Learning on tree architectures outperforms a convolutional feedforward network](https://www.nature.com/articles/s41598-023-27986-6)\n",
-    "  * [Code example for CIFAR](https://github.com/yuval-meir/Tree-3)\n"
+    "  * [Code example for CIFAR](https://github.com/yuval-meir/Tree-3)"
    ]
   }
  ],
