@@ -1,6 +1,6 @@
 # Reading list
 
-[Source](github.com/danjacobellis/SYSML/blob/main/reading_list.md)
+[Source](https://github.com/danjacobellis/SYSML/blob/main/reading_list.md)
 
 #### [Paper: Outrageously Large Neural Networks: The Sparsely-Gated Mixture-of-Experts Layer](https://research.google/pubs/pub45929/)
 
