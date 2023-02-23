@@ -9,4 +9,8 @@
 
 #### [Paper: High throughput Generative Inference of Large Language Models with a Single GPU](https://github.com/FMInference/FlexGen/blob/main/docs/paper.pdf)
 
-* [Code: FlexGen](https://github.com/FMInference/FlexGen)
+* [Software: FlexGen](https://github.com/FMInference/FlexGen)
+
+#### [Paper: LLVM IR Based Scalable Program Embeddings](https://dl.acm.org/doi/abs/10.1145/3418463)
+
+* [Software: IR2vec](https://github.com/IITH-Compilers/IR2Vec)
