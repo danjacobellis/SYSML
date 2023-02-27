@@ -86,6 +86,16 @@
     "* [Paper: Learning on tree architectures outperforms a convolutional feedforward network](https://www.nature.com/articles/s41598-023-27986-6)\n",
     "  * [Code example for CIFAR](https://github.com/yuval-meir/Tree-3)"
    ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "cda47045-c7ed-4924-9319-707ea68423c1",
+   "metadata": {},
+   "source": [
+    "## Transfer learning / Self supervised learning\n",
+    "\n",
+    "* [wav2vec](https://www.isca-speech.org/archive_v0/Interspeech_2019/abstracts/1873.html)"
+   ]
   }
  ],
  "metadata": {
