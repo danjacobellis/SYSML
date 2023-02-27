@@ -94,7 +94,8 @@
    "source": [
     "## Transfer learning / Self supervised learning\n",
     "\n",
-    "* [wav2vec](https://www.isca-speech.org/archive_v0/Interspeech_2019/abstracts/1873.html)"
+    "* [wav2vec](https://www.isca-speech.org/archive_v0/Interspeech_2019/abstracts/1873.html)\n",
+    "  * [wav2vec 2.0 on github](https://github.com/facebookresearch/fairseq/blob/main/examples/wav2vec/README.md)"
    ]
   }
  ],
