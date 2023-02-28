@@ -115,6 +115,15 @@
 </section>
 <section id="transfer-learning-self-supervised-learning">
 <h1>Transfer learning / Self supervised learning<a class="headerlink" href="#transfer-learning-self-supervised-learning" title="Permalink to this headline">¶</a></h1>
+<section id="conventional-transfer-learning-from-pretrained-mobilenet">
+<h2>Conventional transfer learning from pretrained mobilenet<a class="headerlink" href="#conventional-transfer-learning-from-pretrained-mobilenet" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.tensorflow.org/tutorials/images/transfer_learning">Moblilenet v2 (images)</a></p></li>
+<li><p><a class="reference external" href="https://www.tensorflow.org/tutorials/audio/transfer_learning_audio">YAMNet (audio)</a></p></li>
+</ul>
+</section>
+<section id="self-supervised-learning">
+<h2>Self supervised learning<a class="headerlink" href="#self-supervised-learning" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.isca-speech.org/archive_v0/Interspeech_2019/abstracts/1873.html">wav2vec</a></p>
 <ul>
@@ -122,6 +131,31 @@
 </ul>
 </li>
 </ul>
+</section>
+</section>
+<section id="datasets-and-models-for-experiments">
+<h1>Datasets and models for experiments<a class="headerlink" href="#datasets-and-models-for-experiments" title="Permalink to this headline">¶</a></h1>
+<section id="audio">
+<h2>Audio<a class="headerlink" href="#audio" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://tfhub.dev/google/yamnet/1">Pretrained model: YAMNet</a></p>
+<ul>
+<li><p><a class="reference external" href="https://github.com/tensorflow/models/tree/master/research/audioset/yamnet">github repo describing pipeline</a></p>
+<ul>
+<li><p>Data is resampled to 16 kHz</p></li>
+<li><p>A time-frequency transform is applied</p></li>
+<li><p>input size is 96x64</p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="https://research.google.com/audioset/">Audioset</a></p>
+<ul>
+<li><p><a class="reference external" href="https://github.com/tensorflow/models/blob/master/research/audioset/yamnet/yamnet_class_map.csv">Subset consisting of 521 classes</a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</section>
 </section>
 
 
@@ -156,7 +190,15 @@
 <li class="toctree-l2"><a class="reference internal" href="#one-hot-encode-then-exploit-sparsity">One-hot encode, then exploit sparsity</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="#transfer-learning-self-supervised-learning">Transfer learning / Self supervised learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#transfer-learning-self-supervised-learning">Transfer learning / Self supervised learning</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#conventional-transfer-learning-from-pretrained-mobilenet">Conventional transfer learning from pretrained mobilenet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#self-supervised-learning">Self supervised learning</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#datasets-and-models-for-experiments">Datasets and models for experiments</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#audio">Audio</a></li>
+</ul>
+</li>
 </ul>
 
 <div class="relations">
