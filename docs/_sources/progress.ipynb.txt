@@ -48,6 +48,10 @@
    "source": [
     "## Approaches to neural compression\n",
     "\n",
+    "### Transformer\n",
+    "\n",
+    "* [Paper: Variable-Rate Deep Image Compression With Vision Transformers](https://ieeexplore.ieee.org/abstract/document/9770776)\n",
+    "\n",
     "### Optimize parameters of a nonlinear transform code\n",
     "* [Paper: End-to-end optimized image compression](http://www.cns.nyu.edu/pub/eero/balle17a-final.pdf)\n",
     "  * [Code example (tensorflow documentation)](https://www.tensorflow.org/tutorials/generative/data_compression)\n",
