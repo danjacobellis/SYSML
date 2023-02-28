@@ -24,6 +24,8 @@
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="prev" title="Transfer Learning from Lossy Codecs" href="proposal.html" />
@@ -135,9 +137,29 @@
 </section>
 <section id="datasets-and-models-for-experiments">
 <h1>Datasets and models for experiments<a class="headerlink" href="#datasets-and-models-for-experiments" title="Permalink to this headline">¶</a></h1>
+<section id="images">
+<h2>Images<a class="headerlink" href="#images" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Imagenet-1k and Mobilenet variants</p>
+<ul>
+<li><p>Mobilenet models allow tradeoff between model complexity and accuracy</p></li>
+<li><p>Two main hyperparameters: Width multiplier and resolution multiplier</p>
+<ul>
+<li><p>Width multipler <span class="math notranslate nohighlight">\(\alpha \in (0,1]\)</span> controls the number of channels at each layer. Computational cost is proportional to <span class="math notranslate nohighlight">\(\alpha^2\)</span></p></li>
+<li><p>Resolution multiplier <span class="math notranslate nohighlight">\(\rho \in (0,1]\)</span> controls the resolution of each channel. Computational cost is proportional to <span class="math notranslate nohighlight">\(\rho^2\)</span></p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><img alt="" src="_images/top1_vs_MAdd.png" /></p>
+<p><img alt="" src="_images/top1_vs_latency.png" /></p>
+<p><a class="reference external" href="https://openaccess.thecvf.com/content_ICCV_2019/html/Howard_Searching_for_MobileNetV3_ICCV_2019_paper.html">source</a></p>
+</section>
 <section id="audio">
 <h2>Audio<a class="headerlink" href="#audio" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
+<li><p>Current audio models use similar CNN to images, but applied to a time-frequency representation of the audio</p></li>
 <li><p><a class="reference external" href="https://tfhub.dev/google/yamnet/1">Pretrained model: YAMNet</a></p>
 <ul>
 <li><p><a class="reference external" href="https://github.com/tensorflow/models/tree/master/research/audioset/yamnet">github repo describing pipeline</a></p>
@@ -196,6 +218,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="#datasets-and-models-for-experiments">Datasets and models for experiments</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#images">Images</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#audio">Audio</a></li>
 </ul>
 </li>
