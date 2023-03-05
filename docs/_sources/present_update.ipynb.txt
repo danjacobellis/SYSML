@@ -1,0 +1,230 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "id": "267e4f8c-85dd-4f36-9ee4-0462952afe5d",
+   "metadata": {
+    "tags": [
+     "remove-nb-cell"
+    ]
+   },
+   "source": [
+    "# Transfer Learning from Lossy Codecs\n",
+    "[Slides](https://danjacobellis.github.io/SYSML/present_update.slides.html)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "c0e072a5-d669-4465-9a53-03cf7f807acd",
+   "metadata": {
+    "slideshow": {
+     "slide_type": "slide"
+    },
+    "tags": [
+     "remove-cell"
+    ]
+   },
+   "source": [
+    "<script>\n",
+    "    document.querySelector('head').innerHTML += '<style>.slides { zoom: 1.75 !important; }</style>';\n",
+    "</script>\n",
+    "\n",
+    "<center> <h1>\n",
+    "Transfer Learning from Lossy Codecs\n",
+    "</h1> </center>\n",
+    "\n",
+    "&nbsp;\n",
+    "\n",
+    "<center> <h2>\n",
+    "Dan Jacobellis\n",
+    "</h2> </center>"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "30aa1078-7e0d-44c5-8f0d-99f43c450981",
+   "metadata": {
+    "slideshow": {
+     "slide_type": "slide"
+    },
+    "tags": []
+   },
+   "source": [
+    "## Lossy compression\n",
+    "\n",
+    "* Most data are stored using lossy formats (MP3, JPEG)\n",
+    "* 1-4 bit subband quantization is typical\n",
+    "* ~1.5 bits per sample/pixel after entropy coding"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "1a3b6296-15c4-49c9-a70b-01362df4bdfd",
+   "metadata": {
+    "tags": [
+     "remove-cell"
+    ]
+   },
+   "source": [
+    "<p style=\"text-align:center;\">\n",
+    "<img src=\"_images/lossy_lossless.png\" width=700 height=700 class=\"center\">\n",
+    "</p>"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "5415e03e-48e4-41da-b49d-89bc78f7f7f6",
+   "metadata": {
+    "tags": [
+     "remove-nb-cell"
+    ]
+   },
+   "source": [
+    "![](img/lossy_lossless.png)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "a012104d-ab48-462e-a8ca-2bc3788cc92a",
+   "metadata": {
+    "slideshow": {
+     "slide_type": "slide"
+    },
+    "tags": []
+   },
+   "source": [
+    "## Conventional training procedure\n",
+    "\n",
+    "* Still suffers from all of the downsides of lossy compression\n",
+    "* Don't get any of the benefits of smaller representation!"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "42577d58-eb38-4c27-9c6c-61568a1ad349",
+   "metadata": {
+    "tags": [
+     "remove-cell"
+    ]
+   },
+   "source": [
+    "<p style=\"text-align:center;\">\n",
+    "<img src=\"_images/conventional.png\" width=700 height=700 class=\"center\">\n",
+    "</p>"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "1f030fd9-c281-48e6-96ef-61cce8442f94",
+   "metadata": {
+    "tags": [
+     "remove-nb-cell"
+    ]
+   },
+   "source": [
+    "![](img/conventional.png)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "6907b2a7-49d9-4ec7-9f15-31a059ca1259",
+   "metadata": {
+    "slideshow": {
+     "slide_type": "slide"
+    },
+    "tags": []
+   },
+   "source": [
+    "## The neural codecs are coming!\n",
+    "\n",
+    "* Google: Soundstream/Lyra (2021) \n",
+    "  * [API available for web applications and android](https://github.com/google/lyra)\n",
+    "  * Currently used in Google meet for low bitrate connections\n",
+    "* Meta: Encodec (2022)\n",
+    "  * [Pytorch API available](https://github.com/facebookresearch/encodec)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "72c6e009-0556-40ab-b0e7-10935824d179",
+   "metadata": {
+    "tags": [
+     "remove-cell"
+    ]
+   },
+   "source": [
+    "<p style=\"text-align:center;\">\n",
+    "<img src=\"_images/encodec_architecture.png\" width=700 height=700 class=\"center\">\n",
+    "</p>"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "aa1f7b0a-0d2d-4d28-9c2f-e27a73ee1c54",
+   "metadata": {
+    "tags": [
+     "remove-nb-cell"
+    ]
+   },
+   "source": [
+    "![](img/encodec_architecture.png)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "2feaa4de-ce6c-4814-9669-4fae7cecdee0",
+   "metadata": {
+    "slideshow": {
+     "slide_type": "slide"
+    },
+    "tags": []
+   },
+   "source": [
+    "## Neural image/video compression\n",
+    "\n",
+    "* Many patents have been filed. Expect standardized versions very soon!"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "44a425e8-2490-47f5-ad84-4e29e58b111c",
+   "metadata": {
+    "tags": [
+     "remove-cell"
+    ]
+   },
+   "source": [
+    "<p style=\"text-align:center;\">\n",
+    "<img src=\"_images/JPEG_vs_SD.svg\" width=700 height=700 class=\"center\">\n",
+    "</p>"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "ba5bd7c8-e91d-4db0-95de-78752da53a8a",
+   "metadata": {
+    "tags": [
+     "remove-nb-cell"
+    ]
+   },
+   "source": [
+    "![](img/JPEG_vs_SD.svg)"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Julia 1.7.0-beta3",
+   "language": "julia",
+   "name": "julia-1.7"
+  },
+  "language_info": {
+   "file_extension": ".jl",
+   "mimetype": "application/julia",
+   "name": "julia",
+   "version": "1.7.0"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
