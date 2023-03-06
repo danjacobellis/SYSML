@@ -210,6 +210,103 @@
    "source": [
     "![](img/JPEG_vs_SD.svg)"
    ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "af0213ee-2d91-4ace-bb45-d7a036037823",
+   "metadata": {
+    "slideshow": {
+     "slide_type": "slide"
+    },
+    "tags": []
+   },
+   "source": [
+    "## Neural representation learning"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "0c41dcaf-aa1c-41e0-9ae4-36007f6b98e1",
+   "metadata": {
+    "tags": [
+     "remove-cell"
+    ]
+   },
+   "source": [
+    "<p style=\"text-align:center;\">\n",
+    "<img src=\"_images/vae.svg\" width=700 height=700 class=\"center\">\n",
+    "</p>"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "effc9f8e-adfa-43eb-90ab-79945709ef3e",
+   "metadata": {
+    "tags": [
+     "remove-nb-cell"
+    ]
+   },
+   "source": [
+    "![](img/vae.svg)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "b02baec2-62f3-48ee-a69f-551fe9a65193",
+   "metadata": {
+    "slideshow": {
+     "slide_type": "slide"
+    },
+    "tags": []
+   },
+   "source": [
+    "## Scaling convolutional neural networks"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "52884f5f-d9d3-449f-9bcf-5c93cf9c5dcf",
+   "metadata": {
+    "tags": [
+     "remove-cell"
+    ]
+   },
+   "source": [
+    "<p style=\"text-align:center;\">\n",
+    "<img src=\"_images/EfficientNet.svg\" width=700 height=700 class=\"center\">\n",
+    "</p>"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "60a6cf24-2294-4734-9ca0-1007d18578ae",
+   "metadata": {
+    "tags": [
+     "remove-nb-cell"
+    ]
+   },
+   "source": [
+    "![](img/EfficientNet.svg)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "f0171ee4-7d72-44fa-9efe-76c6acf36e4c",
+   "metadata": {
+    "slideshow": {
+     "slide_type": "slide"
+    },
+    "tags": []
+   },
+   "source": [
+    "## Initial results\n",
+    " \n",
+    "|    Model    |        Input Size       | Accuracy | Parameters | Training Time | Training FLOPS |\n",
+    "|:-----------:|:-----------------------:|:--------:|:----------:|:-------------:|:--------------:|\n",
+    "| MobileNetV2 | $$224\\times224\\times3$$ |    58%   |    2.23M   |  32 sec/epoch |      6.1 T     |\n",
+    "|   Resample  |  $$64\\times64\\times3$$  |    39%   |    250K    |  14 sec/epoch |     0.915 B    |\n",
+    "|     VAE     |  $$64\\times64\\times4$$  |    44%   |    251K    |  15 sec/epoch |     0.976 B    |"
+   ]
   }
  ],
  "metadata": {
