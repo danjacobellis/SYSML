@@ -14844,6 +14844,24 @@ Dan Jacobellis
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Scaling-convolutional-neural-networks">Scaling convolutional neural networks<a class="anchor-link" href="#Scaling-convolutional-neural-networks">&#182;</a></h2><ul>
+<li>Depth: $d=\alpha^{\phi}$</li>
+<li>Width: $w=\beta^{\phi}$</li>
+<li>Resolution: $d=\gamma^{\phi}$</li>
+<li>$\alpha=1.2, \beta=1.1, \gamma=1.15$</li>
+<li>FLOPS $\propto \alpha \beta^2 \gamma^2$</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h2 id="Initial-results">Initial results<a class="anchor-link" href="#Initial-results">&#182;</a></h2><table>
 <thead><tr>
 <th style="text-align:center">Model</th>
@@ -14881,6 +14899,23 @@ Dan Jacobellis
 </tr>
 </tbody>
 </table>
+
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Next-steps">Next steps<a class="anchor-link" href="#Next-steps">&#182;</a></h2><ul>
+<li>Larger batch sizes can fit in memory $\to$ need larger dataset</li>
+<li>Explore efficient pipelines for augmentation</li>
+<li>Test effects of quantization with similar model</li>
+<li>Test other types of models more suited to discrete inputs</li>
+</ul>
 
 </div>
 </div>
