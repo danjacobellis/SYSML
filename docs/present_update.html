@@ -46,15 +46,19 @@
 <p><a class="reference external" href="https://danjacobellis.github.io/SYSML/present_update.slides.html">Slides</a></p>
 <div class="section" id="why-is-training-so-expensive">
 <h2>Why is training so expensive?<a class="headerlink" href="#why-is-training-so-expensive" title="Permalink to this headline">¶</a></h2>
+<p>Training data are typically stored using lossy formats (MPEG, JPEG, HEVC, etc).</p>
+<p>Input pipelines often require multiple CPU cores as well as one or more coprocessors (GPU, TPU, etc).</p>
+<p>Moving the data around is often a bottleneck.</p>
 <p><img alt="" src="_images/CNN_pipeline.svg" /></p>
 </div>
 <div class="section" id="scaling-convolutional-neural-networks">
 <h2>Scaling convolutional neural networks<a class="headerlink" href="#scaling-convolutional-neural-networks" title="Permalink to this headline">¶</a></h2>
-<p><img alt="" src="_images/EfficientNet.svg" /></p>
+<p>Every new technique to improve efficiency is met with new demands to make models and improve accuracy.</p>
+<p><img alt="" src="_images/EfficientNet.png" /></p>
 </div>
 <div class="section" id="methods-to-increase-cnn-efficiency">
 <h2>Methods to increase CNN efficiency<a class="headerlink" href="#methods-to-increase-cnn-efficiency" title="Permalink to this headline">¶</a></h2>
-<p>How do we increase the efficiency of large, parallel, <em>convolutional</em> operations?</p>
+<p>How do we increase the efficiency of large neural networks?</p>
 <ul class="simple">
 <li><p><strong>Quantize</strong> the signal, weights, or activations</p></li>
 </ul>

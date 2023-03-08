@@ -55,6 +55,22 @@
   },
   {
    "cell_type": "markdown",
+   "id": "1ddbc3a4-6118-4caa-9b91-624f33b79c38",
+   "metadata": {
+    "tags": [
+     "remove-nb-cell"
+    ]
+   },
+   "source": [
+    "Training data are typically stored using lossy formats (MPEG, JPEG, HEVC, etc).\n",
+    "\n",
+    "Input pipelines often require multiple CPU cores as well as one or more coprocessors (GPU, TPU, etc).\n",
+    "\n",
+    "Moving the data around is often a bottleneck."
+   ]
+  },
+  {
+   "cell_type": "markdown",
    "id": "add5f26c-bacd-46bd-b851-68d5bd463cdc",
    "metadata": {
     "tags": [
@@ -94,6 +110,18 @@
   },
   {
    "cell_type": "markdown",
+   "id": "dd3fb713-6f91-47fc-b038-bdd134cf4e91",
+   "metadata": {
+    "tags": [
+     "remove-nb-cell"
+    ]
+   },
+   "source": [
+    "Every new technique to improve efficiency is met with new demands to make models and improve accuracy."
+   ]
+  },
+  {
+   "cell_type": "markdown",
    "id": "b3c0cc41-957f-4e35-8c74-27de9532024d",
    "metadata": {
     "tags": [
@@ -102,7 +130,7 @@
    },
    "source": [
     "<p style=\"text-align:center;\">\n",
-    "<img src=\"_images/EfficientNet.svg\" width=700 height=700 class=\"center\">\n",
+    "<img src=\"_images/EfficientNet.png\" width=700 height=700 class=\"center\">\n",
     "</p>"
    ]
   },
@@ -115,7 +143,7 @@
     ]
    },
    "source": [
-    "![](img/EfficientNet.svg)"
+    "![](img/EfficientNet.png)"
    ]
   },
   {
@@ -130,7 +158,7 @@
    "source": [
     "## Methods to increase CNN efficiency\n",
     "\n",
-    "How do we increase the efficiency of large, parallel, *convolutional* operations?"
+    "How do we increase the efficiency of large neural networks?"
    ]
   },
   {
