@@ -4,24 +4,20 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Approaches to neural compression &#8212; Dan Jacobellis | University of Texas at Austin</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/alabaster.css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/theme.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script>let toggleHintShow = 'Click to show';</script>
-    <script>let toggleHintHide = 'Click to hide';</script>
-    <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
@@ -46,15 +42,15 @@
 
           <div class="body" role="main">
             
-  <section id="approaches-to-neural-compression">
+  <div class="section" id="approaches-to-neural-compression">
 <h1>Approaches to neural compression<a class="headerlink" href="#approaches-to-neural-compression" title="Permalink to this headline">¶</a></h1>
-<section id="transformer">
+<div class="section" id="transformer">
 <h2>Transformer<a class="headerlink" href="#transformer" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://ieeexplore.ieee.org/abstract/document/9770776">Paper: Variable-Rate Deep Image Compression With Vision Transformers</a></p></li>
 </ul>
-</section>
-<section id="optimize-parameters-of-a-nonlinear-transform-code">
+</div>
+<div class="section" id="optimize-parameters-of-a-nonlinear-transform-code">
 <h2>Optimize parameters of a nonlinear transform code<a class="headerlink" href="#optimize-parameters-of-a-nonlinear-transform-code" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="http://www.cns.nyu.edu/pub/eero/balle17a-final.pdf">Paper: End-to-end optimized image compression</a></p>
@@ -68,8 +64,8 @@
 </ul>
 </li>
 </ul>
-</section>
-<section id="vector-quantized-variational-autoencoder">
+</div>
+<div class="section" id="vector-quantized-variational-autoencoder">
 <h2>Vector-quantized variational autoencoder<a class="headerlink" href="#vector-quantized-variational-autoencoder" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://proceedings.neurips.cc/paper/2017/hash/7a98af17e63a0ac09ce2e96d03992fbc-Abstract.html">Paper: Neural Discrete Representation Learning</a></p>
@@ -80,8 +76,8 @@
 </ul>
 </li>
 </ul>
-</section>
-<section id="rnn-based-generative-model-of-speech">
+</div>
+<div class="section" id="rnn-based-generative-model-of-speech">
 <h2>RNN-based generative model of speech<a class="headerlink" href="#rnn-based-generative-model-of-speech" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://ieeexplore.ieee.org/abstract/document/9415120?casa_token=dZRQjc-xqesAAAAA:UxxPxExec7YEAFOdHvM5L0fPMa3LjVNz8UJpeqoAQEwUds6j5ng5Nik5SnPcBlGsPQT2q2HG">Paper: Generative speech coding with predictive variance regularization</a></p>
@@ -90,8 +86,8 @@
 </ul>
 </li>
 </ul>
-</section>
-<section id="conditional-gan-for-images">
+</div>
+<div class="section" id="conditional-gan-for-images">
 <h2>Conditional GAN for images<a class="headerlink" href="#conditional-gan-for-images" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://proceedings.neurips.cc/paper/2020/hash/8a50bae297807da9e97722a0b3fd8f27-Abstract.html">Paper: High-Fidelity Generative Image Compression</a></p>
@@ -100,18 +96,18 @@
 </ul>
 </li>
 </ul>
-</section>
-</section>
-<section id="neural-network-structures-for-learning-from-quantized-data">
+</div>
+</div>
+<div class="section" id="neural-network-structures-for-learning-from-quantized-data">
 <h1>Neural network structures for learning from quantized data<a class="headerlink" href="#neural-network-structures-for-learning-from-quantized-data" title="Permalink to this headline">¶</a></h1>
-<section id="binary-neural-networks">
+<div class="section" id="binary-neural-networks">
 <h2>Binary Neural Networks<a class="headerlink" href="#binary-neural-networks" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://docs.larq.dev/larq/">Larq: Library for implementing BNNs</a></p></li>
 <li><p><a class="reference external" href="https://danjacobellis.net/ITML/lossy_learning.slides.html#/">Dan’s slides</a></p></li>
 </ul>
-</section>
-<section id="one-hot-encode-then-exploit-sparsity">
+</div>
+<div class="section" id="one-hot-encode-then-exploit-sparsity">
 <h2>One-hot encode, then exploit sparsity<a class="headerlink" href="#one-hot-encode-then-exploit-sparsity" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.nature.com/articles/s41598-023-27986-6">Paper: Learning on tree architectures outperforms a convolutional feedforward network</a></p>
@@ -120,18 +116,18 @@
 </ul>
 </li>
 </ul>
-</section>
-</section>
-<section id="transfer-learning-self-supervised-learning">
+</div>
+</div>
+<div class="section" id="transfer-learning-self-supervised-learning">
 <h1>Transfer learning / Self supervised learning<a class="headerlink" href="#transfer-learning-self-supervised-learning" title="Permalink to this headline">¶</a></h1>
-<section id="conventional-transfer-learning-from-pretrained-mobilenet">
+<div class="section" id="conventional-transfer-learning-from-pretrained-mobilenet">
 <h2>Conventional transfer learning from pretrained mobilenet<a class="headerlink" href="#conventional-transfer-learning-from-pretrained-mobilenet" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.tensorflow.org/tutorials/images/transfer_learning">Moblilenet v2 (images)</a></p></li>
 <li><p><a class="reference external" href="https://www.tensorflow.org/tutorials/audio/transfer_learning_audio">YAMNet (audio)</a></p></li>
 </ul>
-</section>
-<section id="self-supervised-learning">
+</div>
+<div class="section" id="self-supervised-learning">
 <h2>Self supervised learning<a class="headerlink" href="#self-supervised-learning" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.isca-speech.org/archive_v0/Interspeech_2019/abstracts/1873.html">wav2vec</a></p>
@@ -140,11 +136,11 @@
 </ul>
 </li>
 </ul>
-</section>
-</section>
-<section id="datasets-and-models-for-experiments">
+</div>
+</div>
+<div class="section" id="datasets-and-models-for-experiments">
 <h1>Datasets and models for experiments<a class="headerlink" href="#datasets-and-models-for-experiments" title="Permalink to this headline">¶</a></h1>
-<section id="images">
+<div class="section" id="images">
 <h2>Images<a class="headerlink" href="#images" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Imagenet-1k and Mobilenet variants</p>
@@ -162,8 +158,8 @@
 <p><img alt="" src="_images/top1_vs_MAdd.png" /></p>
 <p><img alt="" src="_images/top1_vs_latency.png" /></p>
 <p><a class="reference external" href="https://openaccess.thecvf.com/content_ICCV_2019/html/Howard_Searching_for_MobileNetV3_ICCV_2019_paper.html">source</a></p>
-</section>
-<section id="audio">
+</div>
+<div class="section" id="audio">
 <h2>Audio<a class="headerlink" href="#audio" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Current audio models use similar CNN to images, but applied to a time-frequency representation of the audio</p></li>
@@ -184,8 +180,8 @@
 </ul>
 </li>
 </ul>
-</section>
-</section>
+</div>
+</div>
 
 
           </div>
@@ -268,7 +264,7 @@
       &copy;.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.5.0</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.4.0</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |

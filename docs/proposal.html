@@ -4,24 +4,20 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Transfer Learning from Lossy Codecs &#8212; Dan Jacobellis | University of Texas at Austin</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/alabaster.css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/theme.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script>let toggleHintShow = 'Click to show';</script>
-    <script>let toggleHintHide = 'Click to hide';</script>
-    <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
@@ -46,10 +42,10 @@
 
           <div class="body" role="main">
             
-  <section class="tex2jax_ignore mathjax_ignore" id="transfer-learning-from-lossy-codecs">
+  <div class="tex2jax_ignore mathjax_ignore section" id="transfer-learning-from-lossy-codecs">
 <h1>Transfer Learning from Lossy Codecs<a class="headerlink" href="#transfer-learning-from-lossy-codecs" title="Permalink to this headline">¶</a></h1>
 <p><a class="reference external" href="https://danjacobellis.github.io/SYSML/proposal.slides.html">Slides</a></p>
-<section id="lossy-compression">
+<div class="section" id="lossy-compression">
 <h2>Lossy compression<a class="headerlink" href="#lossy-compression" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Most data are stored using lossy formats (MP3, JPEG)</p></li>
@@ -57,24 +53,24 @@
 <li><p>~1.5 bits per sample/pixel after entropy coding</p></li>
 </ul>
 <p><img alt="" src="_images/lossy_lossless.png" /></p>
-</section>
-<section id="conventional-training-procedure">
+</div>
+<div class="section" id="conventional-training-procedure">
 <h2>Conventional training procedure<a class="headerlink" href="#conventional-training-procedure" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Still suffers from all of the downsides of lossy compression</p></li>
 <li><p>Don’t get any of the benefits of smaller representation!</p></li>
 </ul>
 <p><img alt="" src="_images/conventional.png" /></p>
-</section>
-<section id="neural-compression-standards">
+</div>
+<div class="section" id="neural-compression-standards">
 <h2>Neural compression standards<a class="headerlink" href="#neural-compression-standards" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Soundstream (Google, 2021) and Encodec (Meta, 2022)</p></li>
 <li><p>Fully trained models available to download and use</p></li>
 </ul>
 <p><img alt="" src="_images/encodec_architecture.png" /></p>
-</section>
-<section id="neural-codec-transfer-learning">
+</div>
+<div class="section" id="neural-codec-transfer-learning">
 <h2>Neural codec transfer learning<a class="headerlink" href="#neural-codec-transfer-learning" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Example dataset: speech commands</p>
@@ -101,8 +97,8 @@
 </tr>
 </tbody>
 </table>
-</section>
-<section id="training-on-quantized-data-or-discrete-codes">
+</div>
+<div class="section" id="training-on-quantized-data-or-discrete-codes">
 <h2>Training on quantized data or discrete codes<a class="headerlink" href="#training-on-quantized-data-or-discrete-codes" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Ideally, we could just “replace” several low-precision inputs with a single high precision input</p></li>
@@ -113,8 +109,8 @@
 </ul>
 </li>
 </ul>
-</section>
-<section id="open-questions-and-project-goals">
+</div>
+<div class="section" id="open-questions-and-project-goals">
 <h2>Open questions and project goals<a class="headerlink" href="#open-questions-and-project-goals" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>What is the best way to train on quantized data?</p>
@@ -136,8 +132,8 @@
 </ul>
 </li>
 </ul>
-</section>
-</section>
+</div>
+</div>
 
 
           </div>
@@ -209,7 +205,7 @@
       &copy;.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.5.0</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.4.0</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |
