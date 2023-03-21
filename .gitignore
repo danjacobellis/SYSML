@@ -1,0 +1,7 @@
+.ipynb_checkpoints
+experiments/before_2023_03_18/data
+experiments/before_2023_03_18/encodec_transformed_data/
+experiments/before_2023_03_18/imagenette/
+experiments/tfc/
+experiments/before_2023_03_18/latent_test/
+experiments/before_2023_03_18/latent_train/
