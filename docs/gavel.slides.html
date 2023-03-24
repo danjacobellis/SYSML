@@ -7,7 +7,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
 
-<title>proposal slides</title><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>gavel slides</title><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 
 <!-- General and theme style sheets -->
 <link rel="stylesheet" href="https://unpkg.com/reveal.js@4.0.2/dist/reveal.css">
@@ -14662,10 +14662,13 @@ div.jp-OutputPrompt {
 <script>
     document.querySelector('head').innerHTML += '<style>.slides { zoom: 1.75 !important; }</style>';
 </script><center> <h1>
-Transfer Learning from Lossy Codecs
+Gavel
 </h1> </center><p>&nbsp;</p>
 <center> <h2>
-Dan Jacobellis
+Heterogeneity-Aware Cluster Scheduling Policies for Deep Learning Workloads
+</h2> </center><p>&nbsp;</p>
+<center> <h2>
+Dan Jacobellis and Ian SymSmith
 </h2> </center>
 </div>
 </div>
@@ -14677,12 +14680,7 @@ Dan Jacobellis
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Lossy-compression">Lossy compression<a class="anchor-link" href="#Lossy-compression">&#182;</a></h2><ul>
-<li>Most data are stored using lossy formats (MP3, JPEG)</li>
-<li>1-4 bit subband quantization is typical</li>
-<li>~1.5 bits per sample/pixel after entropy coding</li>
-</ul>
-
+<h2 id="title">title<a class="anchor-link" href="#title">&#182;</a></h2>
 </div>
 </div>
 </div>
@@ -14694,147 +14692,8 @@ Dan Jacobellis
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput  celltag_remove-cell" data-mime-type="text/markdown">
 <p style="text-align:center;">
-<img src="_images/lossy_lossless.png" width=700 height=700 class="center">
+<img src="_images/gavel.png" width=700 height=700 class="center">
 </p>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Conventional-training-procedure">Conventional training procedure<a class="anchor-link" href="#Conventional-training-procedure">&#182;</a></h2><ul>
-<li>Still suffers from all of the downsides of lossy compression</li>
-<li>Don't get any of the benefits of smaller representation!</li>
-</ul>
-
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput  celltag_remove-cell" data-mime-type="text/markdown">
-<p style="text-align:center;">
-<img src="_images/conventional.png" width=700 height=700 class="center">
-</p>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Neural-compression-standards">Neural compression standards<a class="anchor-link" href="#Neural-compression-standards">&#182;</a></h2><ul>
-<li>Soundstream (Google, 2021) and Encodec (Meta, 2022)</li>
-<li>Fully trained models available to download and use</li>
-</ul>
-
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput  celltag_remove-cell" data-mime-type="text/markdown">
-<p style="text-align:center;">
-<img src="_images/encodec_architecture.png" width=700 height=700 class="center">
-</p>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Neural-codec-transfer-learning">Neural codec transfer learning<a class="anchor-link" href="#Neural-codec-transfer-learning">&#182;</a></h2><ul>
-<li>Example dataset: speech commands<ul>
-<li>Input $128 \times 128$ time-frequency distribution represented at full precision</li>
-<li>Compressed size: $2 \times 75 \times 10$ binary codes</li>
-<li>Size reduction of over $300\times$ with very small loss in speech intelligibility</li>
-</ul>
-</li>
-</ul>
-<table>
-<thead><tr>
-<th><audio controls="controls"><source src="./_static/left01.wav" type="audio/wav"></audio></th>
-<th><audio controls="controls"><source src="./_static/right01.wav" type="audio/wav"></audio></th>
-<th><audio controls="controls"><source src="./_static/yes01.wav" type="audio/wav"></audio></th>
-<th><audio controls="controls"><source src="./_static/no01.wav" type="audio/wav"></audio></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><audio controls="controls"><source src="./_static/left01_ecdc.wav" type="audio/wav"></audio></td>
-<td><audio controls="controls"><source src="./_static/right01_ecdc.wav" type="audio/wav"></audio></td>
-<td><audio controls="controls"><source src="./_static/yes01_ecdc.wav" type="audio/wav"></audio></td>
-<td><audio controls="controls"><source src="./_static/no01_ecdc.wav" type="audio/wav"></audio></td>
-</tr>
-</tbody>
-</table>
-
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Training-on-quantized-data-or-discrete-codes">Training on quantized data or discrete codes<a class="anchor-link" href="#Training-on-quantized-data-or-discrete-codes">&#182;</a></h2><ul>
-<li>Ideally, we could just "replace" several low-precision inputs with a single high precision input</li>
-<li>Naive approach: $y = (x_1) + (x_2 &lt;&lt; 1) + (x_3 &lt;&lt; 2) + (x_4 &lt;&lt; 3) \cdots$<ul>
-<li>Amounts to creating a categorical variable</li>
-<li>Standard approach to training on categorical variable is to one-hot encode</li>
-</ul>
-</li>
-</ul>
-
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Open-questions-and-project-goals">Open questions and project goals<a class="anchor-link" href="#Open-questions-and-project-goals">&#182;</a></h2><ul>
-<li>What is the best way to train on quantized data?<ul>
-<li>Binary neural networks</li>
-<li>Exploit sparsity (feature hashing)</li>
-<li>Others?</li>
-</ul>
-</li>
-<li>How do current neural codecs perform on out of distribution data?<ul>
-<li>Test performance of encodec (trained on speech and music) on other types of audio signals</li>
-</ul>
-</li>
-<li>How effective is this type of transfer learning?<ul>
-<li>Reduction in data collection?</li>
-<li>Reduction in computation?</li>
-</ul>
-</li>
-</ul>
-
 </div>
 </div>
 </div>

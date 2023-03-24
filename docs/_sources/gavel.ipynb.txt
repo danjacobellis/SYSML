@@ -1,0 +1,104 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "id": "267e4f8c-85dd-4f36-9ee4-0462952afe5d",
+   "metadata": {
+    "tags": [
+     "remove-nb-cell"
+    ]
+   },
+   "source": [
+    "# Gavel\n",
+    "[Slides](https://danjacobellis.github.io/SYSML/gavel.slides.html)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "c0e072a5-d669-4465-9a53-03cf7f807acd",
+   "metadata": {
+    "slideshow": {
+     "slide_type": "slide"
+    },
+    "tags": [
+     "remove-cell"
+    ]
+   },
+   "source": [
+    "<script>\n",
+    "    document.querySelector('head').innerHTML += '<style>.slides { zoom: 1.75 !important; }</style>';\n",
+    "</script>\n",
+    "\n",
+    "<center> <h1>\n",
+    "Gavel\n",
+    "</h1> </center>\n",
+    "\n",
+    "&nbsp;\n",
+    "\n",
+    "<center> <h2>\n",
+    "Heterogeneity-Aware Cluster Scheduling Policies for Deep Learning Workloads\n",
+    "</h2> </center>\n",
+    "\n",
+    "&nbsp;\n",
+    "\n",
+    "<center> <h2>\n",
+    "Dan Jacobellis and Ian SymSmith\n",
+    "</h2> </center>"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "30aa1078-7e0d-44c5-8f0d-99f43c450981",
+   "metadata": {
+    "slideshow": {
+     "slide_type": "slide"
+    },
+    "tags": []
+   },
+   "source": [
+    "## title\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "1a3b6296-15c4-49c9-a70b-01362df4bdfd",
+   "metadata": {
+    "tags": [
+     "remove-cell"
+    ]
+   },
+   "source": [
+    "<p style=\"text-align:center;\">\n",
+    "<img src=\"_images/gavel.png\" width=700 height=700 class=\"center\">\n",
+    "</p>"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "5415e03e-48e4-41da-b49d-89bc78f7f7f6",
+   "metadata": {
+    "tags": [
+     "remove-nb-cell"
+    ]
+   },
+   "source": [
+    "![](img/gavel.png)"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Julia 1.7.0-beta3",
+   "language": "julia",
+   "name": "julia-1.7"
+  },
+  "language_info": {
+   "file_extension": ".jl",
+   "mimetype": "application/julia",
+   "name": "julia",
+   "version": "1.7.0"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
