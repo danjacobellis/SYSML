@@ -14,7 +14,7 @@ def build():
     
     result = run("jupyter-nbconvert --to slides proposal.ipynb --output docs/proposal --TagRemovePreprocessor.enabled=True --TagRemovePreprocessor.remove_cell_tags='remove-nb-cell' --TagRemovePreprocessor.remove_input_tags='remove-nb-input'",capture_output=True, shell=True)
     result = run("jupyter-nbconvert --to slides present_update.ipynb --output docs/present_update --TagRemovePreprocessor.enabled=True --TagRemovePreprocessor.remove_cell_tags='remove-nb-cell' --TagRemovePreprocessor.remove_input_tags='remove-nb-input'",capture_output=True, shell=True)
-    print(result.stdout.decode("utf-8"))
+    result = run("jupyter-nbconvert --to slides SP.ipynb --output docs/SP --TagRemovePreprocessor.enabled=True --TagRemovePreprocessor.remove_cell_tags='remove-nb-cell' --TagRemovePreprocessor.remove_input_tags='remove-nb-input'",capture_output=True, shell=True)
 
 if __name__ == '__main__':
     build()

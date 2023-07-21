@@ -1,0 +1,365 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "id": "803713bc-6f3f-40c1-84ca-d8cc715fccfa",
+   "metadata": {
+    "editable": true,
+    "slideshow": {
+     "slide_type": ""
+    },
+    "tags": [
+     "remove-nb-cell"
+    ]
+   },
+   "source": [
+    "# When Does Saving Power Save the Planet?\n",
+    "[Slides](https://danjacobellis.github.io/SYSML/SP.slides.html)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "d38dc9e6-7012-4e23-9391-078c9224db8d",
+   "metadata": {
+    "editable": true,
+    "slideshow": {
+     "slide_type": ""
+    },
+    "tags": [
+     "remove-cell"
+    ]
+   },
+   "source": [
+    "<script>\n",
+    "    document.querySelector('head').innerHTML += '<style>.slides { zoom: 1.75 !important; }</style>';\n",
+    "</script>\n",
+    "\n",
+    "<center> <h1>\n",
+    "<a href=\"https://hotcarbon.org/2023/pdf/a20-woodruff.pdf\"> When Does Saving Power Save the Planet? </a>\n",
+    "</h1> </center>"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "142516b9-a169-456f-a175-ef73a9db4c87",
+   "metadata": {
+    "editable": true,
+    "slideshow": {
+     "slide_type": "slide"
+    },
+    "tags": []
+   },
+   "source": [
+    "## The Economics of Productivity"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "718285dd-487d-458e-b20d-85470307ab1e",
+   "metadata": {
+    "editable": true,
+    "slideshow": {
+     "slide_type": "fragment"
+    },
+    "tags": []
+   },
+   "source": [
+    "* In economics, [productivity](https://en.wikipedia.org/wiki/Productivity) is the ratio of **useful outputs** to **scarce inputs**."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "7b0bf01c-da0f-4fc6-9ffc-59308d8bed52",
+   "metadata": {
+    "editable": true,
+    "slideshow": {
+     "slide_type": "fragment"
+    },
+    "tags": []
+   },
+   "source": [
+    "* [Technological innovation](https://en.wikipedia.org/wiki/Productivity-improving_technologies) drives **productivity growth**"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "973f3e54-afa1-4426-a473-a40f3f0b1467",
+   "metadata": {
+    "editable": true,
+    "slideshow": {
+     "slide_type": "fragment"
+    },
+    "tags": []
+   },
+   "source": [
+    "* Therefore, productivity growth will cause us to use fewer resrouces, right? 🙃"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "a6248a26-db3c-497d-bbd9-4fb74b948fe0",
+   "metadata": {
+    "editable": true,
+    "raw_mimetype": "",
+    "slideshow": {
+     "slide_type": "slide"
+    },
+    "tags": []
+   },
+   "source": [
+    "<iframe src=\"https://ourworldindata.org/grapher/share-of-population-in-extreme-poverty?tab=chart&facet=none&country=BRA~CHN~BGD~USA~IDN~PAK~NGA~MEX~RUS\" loading=\"lazy\" style=\"width: 100%; height: 600px; border: 0px none;\"></iframe>"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "c67539a3-2036-462b-8642-9a5eb25ee2b6",
+   "metadata": {
+    "editable": true,
+    "slideshow": {
+     "slide_type": "slide"
+    },
+    "tags": []
+   },
+   "source": [
+    "## The Coal Paradox of 1865"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "8420a721-2bf2-4959-98c5-1a07691f555d",
+   "metadata": {
+    "editable": true,
+    "slideshow": {
+     "slide_type": "fragment"
+    },
+    "tags": []
+   },
+   "source": [
+    "William Jevons, 1865, *[\"The Coal Question; An Inquiry Concerning the Progress of the Nation, and the Probable Exhaustion of Our Coal Mines\"](https://en.wikipedia.org/wiki/The_Coal_Question)*"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "d52c3394-0096-47b8-9f0b-e70e6f0a0831",
+   "metadata": {
+    "editable": true,
+    "slideshow": {
+     "slide_type": "fragment"
+    },
+    "tags": []
+   },
+   "source": [
+    ">It is wholly a confusion of ideas to suppose that the economical use of fuel is equivalent to a diminished consumption. The very contrary is the truth."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "d468a7a9-4df6-4743-a6f2-03b55661f92d",
+   "metadata": {
+    "editable": true,
+    "slideshow": {
+     "slide_type": "fragment"
+    },
+    "tags": []
+   },
+   "source": [
+    "* Now commonly applied to various problems in economics"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "aaae8125-72c1-497d-9c2a-ea21101de92a",
+   "metadata": {
+    "editable": true,
+    "slideshow": {
+     "slide_type": "fragment"
+    },
+    "tags": []
+   },
+   "source": [
+    "* [Jevons paradox](https://en.wikipedia.org/wiki/Jevons_paradox)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "07dafeea-f028-412a-b0e8-4609776c6e3f",
+   "metadata": {
+    "editable": true,
+    "slideshow": {
+     "slide_type": "fragment"
+    },
+    "tags": []
+   },
+   "source": [
+    "* [Rebound effect](https://en.wikipedia.org/wiki/Rebound_effect)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "3d78e942-70e0-4509-bbbd-55d559d7313b",
+   "metadata": {
+    "editable": true,
+    "slideshow": {
+     "slide_type": "slide"
+    },
+    "tags": []
+   },
+   "source": [
+    "## Rebound Effects in computing and ML"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "51dd0a99-1c86-495e-8b53-600e9174ec5e",
+   "metadata": {
+    "editable": true,
+    "slideshow": {
+     "slide_type": "fragment"
+    },
+    "tags": []
+   },
+   "source": [
+    "$$\\textrm{Increased efficiency} \\to \\textrm{Bigger, better models} \\to \\textrm{Greater demand}$$"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "1d763251-a85f-43b1-8437-fb9f308152fa",
+   "metadata": {
+    "editable": true,
+    "slideshow": {
+     "slide_type": ""
+    },
+    "tags": [
+     "remove-nb-cell"
+    ]
+   },
+   "source": [
+    "![](img/SP.png)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "754300ff-8447-4ad9-b0e2-521a07cda8db",
+   "metadata": {
+    "editable": true,
+    "slideshow": {
+     "slide_type": "fragment"
+    },
+    "tags": [
+     "remove-cell"
+    ]
+   },
+   "source": [
+    "<p style=\"text-align:center;\">\n",
+    "<img src=\"_images/SP.png\" width=700 height=700 class=\"center\">\n",
+    "</p>"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "757fb8f3-cdb0-4500-8131-6700c3482b0c",
+   "metadata": {
+    "editable": true,
+    "slideshow": {
+     "slide_type": "slide"
+    },
+    "tags": []
+   },
+   "source": [
+    "## When Does Saving Power Save the Planet?"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "3a738fef-aa2e-49b1-9920-3390618b7c2b",
+   "metadata": {
+    "editable": true,
+    "slideshow": {
+     "slide_type": "fragment"
+    },
+    "tags": []
+   },
+   "source": [
+    "* Power efficiency will **rarely directly reduce carbon** due to rebound."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "ee711a50-31ee-4fa2-8ded-f94de16bc783",
+   "metadata": {
+    "editable": true,
+    "slideshow": {
+     "slide_type": "fragment"
+    },
+    "tags": []
+   },
+   "source": [
+    "* Rebound makes the argument for power efficiency **more compelling**, not less"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "3fdf6157-1061-4fc0-92ac-2f6348eaa356",
+   "metadata": {
+    "editable": true,
+    "slideshow": {
+     "slide_type": "fragment"
+    },
+    "tags": []
+   },
+   "source": [
+    "* Power efficiency can target the 98% by **increasing the accessiblity and utility of computation**"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "795e22fc-5b06-4805-9b0e-853813003717",
+   "metadata": {
+    "editable": true,
+    "slideshow": {
+     "slide_type": "fragment"
+    },
+    "tags": []
+   },
+   "source": [
+    "* [Computation will accelerate scientific progress on green energy](https://en.wikipedia.org/wiki/Renewable_energy#Emerging_technologies)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "f8be8bd5-1909-4649-91fa-bf7b70b29c77",
+   "metadata": {
+    "editable": true,
+    "slideshow": {
+     "slide_type": "fragment"
+    },
+    "tags": []
+   },
+   "source": [
+    "* [Reducing poverty improves environmental outcomes](https://www.newtimes.co.rw/article/159887/Opinions/the-ano-growtha-prescription-for-misery)"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.10.6"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
